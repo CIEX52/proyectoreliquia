@@ -20,7 +20,8 @@ body{
     display: grid;
 	grid-template-areas: "header header header"
 						 "titulo titulo titulo"
-						 "principal principal video"
+						 "video video video"
+						 "texto texto texto"
 						 "footer footer footer";
 	gap: 10px;
 }
@@ -83,27 +84,20 @@ header{
 }
 
 #video{
-	min-width: 400px;
-	min-height: 200px;
+	grid-area: video;
+	width: 800px;
+	height: 600px;
 	border: solid 1px;
 	border-radius: 5px;
-	grid-area: video;
-	align-self: center;
 	justify-self: center;
 }
 #video iframe{
 	width: 100%;
 	height: 100%;
 }
-.principal{
-	/* border: solid 1px; */
-	grid-area: principal;
-	padding: 10px;
-	font-size: 18px;
-	text-align: justify;
-	word-break: keep-all;
+#texto{
+	grid-area: texto;
 }
-
 footer{
 	grid-area: footer;
 	display: inline-flex;
