@@ -1,46 +1,122 @@
 body{
-    margin: 0px;
-    padding: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#bg-img{
+	position: fixed;
+	background-image: url('../images/coleccion_natulareza/planeta-reciclaje_1920x1279.jpg');
+	background-position: center;
+	background-repeat: space-between;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	z-index: -1;
+	opacity: 70%;
+	width: 100%;
+	height: 100%;
 }
 
 .grid-container{
     display: grid;
-    background-color: yellowgreen;
-    grid-template-columns: 40px auto auto;
-    grid-row: auto auto auto auto;
-    padding: 5px;
-    gap: 5px;
+	grid-template-areas: "header header header"
+						 "titulo titulo titulo"
+						 "principal principal video"
+						 "footer footer footer";
+	gap: 10px;
 }
 
 header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	border-bottom: double 4px;
+	grid-area: header;
+	display: inline-flex;
+	justify-content: space-between;
 }
-#menu-nav{
-    overflow: hidden;
-    display: inline-flex;
-    border: solid 1px;
-    position: sticky 40%;
+#logo img{
+	margin: 10px;
+	width: 90px;
+	animation: rotation 7s infinite linear;
+	filter: drop-shadow(1px 1px 2px greenyellow);
 }
-
-#menu-nav a{
-    background-color: rgb(190, 240, 105);
-    border: solid 4px green;
-    color: black;
-    text-decoration: none;
-    border-radius: 8px;
-    padding: 5px;
- 
+@keyframes rotation {
+	from {transform: rotateY(0deg);}
+	to {transform: rotateY(359deg);}
 }
 
-.menu a:hover{
-    background-color: steelblue;
-    color: white;
-    text-decoration-line: underline;
+#menu{
+	/* border: solid 1px; */
+	margin-top: 20px;
+}
+#menu a{
+	background-color: rgb(175, 229, 175);
+	padding: 5px;
+	margin: 0 5px 0 5px;
+	border-radius: 5px;
+	border-bottom: solid 3px gray;
+	border-left: solid 3px gray;
+	color: black;
+	text-decoration: none;
+	box-shadow: -5px 5px 8px 3px gray;
+}
+#menu a:hover{
+	background-color: yellowgreen;
+	border-bottom: solid 3px greenyellow;
+	border-left: solid 3px greenyellow;
+	border-radius: 5px;
+	color: white;
+	text-decoration: underline whitesmoke;
+	box-shadow: -5px 5px 30px 5px greenyellow;
+	font-size: 20;
+}
+
+#login{
+	/* border: solid 1px; */
+	font-size: 20px;
+	margin: 15px;
+}
+#titulo{
+	/* border: solid 1px; */
+	grid-area: titulo;
+	justify-self: center;
+	text-decoration: underline;
+	text-align: center;
+	text-shadow: 1px 1px 5px greenyellow;
+}
+
+#video{
+	min-width: 400px;
+	min-height: 200px;
+	border: solid 1px;
+	border-radius: 5px;
+	grid-area: video;
+	align-self: center;
+	justify-self: center;
+}
+#video iframe{
+	width: 100%;
+	height: 100%;
+}
+.principal{
+	/* border: solid 1px; */
+	grid-area: principal;
+	padding: 10px;
+	font-size: 18px;
+	text-align: justify;
+	word-break: keep-all;
 }
 
 footer{
-    background-color: steelblue;
-    font-size: small;
+	grid-area: footer;
+	display: inline-flex;
+	border-top: double 5px;
+	padding: 5px;
+	justify-content: space-between;
+}
+.logo-marca{
+	width: 20px;
+	margin-right: 5px;
+}
+#mapa iframe{
+	width: 300px;
+	height: 150px;
+	border: solid 1px greenyellow;
 }
