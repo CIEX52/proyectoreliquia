@@ -45,7 +45,7 @@ section .color:nth-child(3){
     right: 100px;
     width: 500px;
     height: 500px;
-    background: gin#1baccd;
+    background: #1baccd;
     border-radius: 10px;
 }
 
