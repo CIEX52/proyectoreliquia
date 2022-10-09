@@ -1,0 +1,70 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bolder;
+
+    border: 1px solid black;
+    background-color: beige;
+}
+
+/* Nombrar las áreas de Grid*/
+header { grid-area: header}
+nav    { grid-area: nav}
+main   { grid-area: main}
+aside  { grid-area: aside}
+footer { grid-area: footer}
+
+/* Definir todos los contenedortes del grid (Body) como Flex*/
+header,
+nav,
+main,
+aside,
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Definir distribución Grid (Desktop first)*/
+body {
+    display: grid;
+    height: 100vh;
+    grid-gap: 10px;
+    grid-template-areas:
+        "header nav nav nav footer"
+        "main main aside aside footer";
+    grid-template-columns: repeat(4, 3fr) 1fr;
+    grid-template-rows: 1fr 6fr;
+}
+
+@media only screen and (max-width: 1024px) {
+    body {
+        grid-template-areas:
+            "header nav nav nav nav"
+            "main main main aside aside"
+            "footer footer footer footer footer";
+        grid-template-rows: 1fr 7fr;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        grid-template-areas:
+            "header"
+            "nav"
+            "aside"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 4fr 4fr 1fr;
+    }
+}
+
+#logo__img {
+    max-width: 7%;
+    min-width: 45px;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
