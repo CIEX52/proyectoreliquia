@@ -1,0 +1,144 @@
+/*
+Principales
+    #14F500	verde main
+    #0EA800	verde oscuro
+    #62FF54	verde claro
+Complementarios
+    #A80068	fucsia oscuro 
+    #F52BA8	fucsia claro
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas: "header header header"
+                         "main main main"
+                         "footer footer footer";
+    width: 100%;
+    height: 100vh;
+    min-width: 400px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+}
+
+#marca {
+    display: flex;
+    color: green;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5 );
+    border-radius: 5px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px 0 0;
+    filter: drop-shadow(0 0 2px yellowgreen);
+}
+
+#logo img {
+    width: 50px;
+    height: 50px;
+    animation: rotate 8s infinite linear;
+    z-index: 1;
+}
+
+#logo p{
+    position: absolute;
+    color: black;
+    filter: drop-shadow(0 0 2px yellowgreen);
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateY(0deg);
+    }
+
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+#eslogan {
+    line-height: 0;
+    filter: drop-shadow(0 0 2px yellowgreen);
+
+}
+
+#menu {
+    color: white;
+    align-self: center;
+    justify-self: center;
+}
+
+#menu a {
+    margin: 0 5px 0 0;
+    padding: 3px;
+    text-decoration: none;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5 );
+    border-radius: 5px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+}
+
+#menu a:visited {
+    color: white;
+}
+
+#login {
+    align-self: flex-start;
+    margin: 10px 10px 0 0;
+}
+
+#login a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    box-shadow: 0 25px 45px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5 );
+    border-radius: 5px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+}
+
+#login a:visited {
+    color: black;
+}
+
+.main {
+    outline: solid .5px blue;
+    grid-area: main;
+    padding: 10px;
+    text-align: justify;
+}
+
+footer {
+    outline: solid .5px red;
+    grid-area: footer;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+#nos ul li {
+    list-style: none;
+    font-size: 13px;
+}
