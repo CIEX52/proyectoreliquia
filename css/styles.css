@@ -1,70 +1,168 @@
 *{
     font-family: 'Quicksand', sans-serif;
-    font-weight: bolder;
+    text-align: center;
+    font-size: 1.05em;
 
-    border: 1px solid black;
-    background-color: beige;
+    /* border: 1px solid black; */
 }
 
-/* Nombrar las áreas de Grid*/
-header { grid-area: header}
-nav    { grid-area: nav}
-main   { grid-area: main}
-aside  { grid-area: aside}
-footer { grid-area: footer}
+/* DEFINICIÓN RESPONSIVE */
+    /* Nombrar las áreas de Grid*/
+    header { grid-area: header}
+    nav    { grid-area: nav}
+    main   { grid-area: main}
+    aside  { grid-area: aside}
+    footer { grid-area: footer}
 
-/* Definir todos los contenedortes del grid (Body) como Flex*/
-header,
-nav,
-main,
-aside,
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Definir distribución Grid (Desktop first)*/
-body {
-    display: grid;
-    height: 100vh;
-    grid-gap: 10px;
-    grid-template-areas:
-        "header nav nav nav footer"
-        "main main aside aside footer";
-    grid-template-columns: repeat(4, 3fr) 1fr;
-    grid-template-rows: 1fr 6fr;
-}
-
-@media only screen and (max-width: 1024px) {
-    body {
-        grid-template-areas:
-            "header nav nav nav nav"
-            "main main main aside aside"
-            "footer footer footer footer footer";
-        grid-template-rows: 1fr 7fr;
+    /* Definir todos los contenedortes del grid (Body) como Flex*/
+    header,
+    nav,
+    main,
+    aside,
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-}
 
-@media only screen and (max-width: 480px) {
+    /* Definir distribución Grid (Desktop first)*/
     body {
+        display: grid;
+        /* grid-gap: 1.2em; */
         grid-template-areas:
-            "header"
-            "nav"
-            "aside"
-            "main"
-            "footer";
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 4fr 4fr 1fr;
+            "header nav nav nav footer"
+            "aside aside main main footer";
+        grid-template-columns: repeat(4, 3fr) 100px;
+        grid-template-rows: 100px auto auto;
     }
-}
+    nav {
+        justify-content: end;
+    }
+    @media only screen and (max-width: 1024px) {
+        body {
+            grid-template-areas:
+                "header nav nav nav nav"
+                "aside aside aside main main"
+                "footer footer footer footer footer";
+            grid-template-rows: 100px auto 100px;
+        }
+        nav {
+            justify-content: end;
+        }
+    }
+    @media only screen and (max-width: 800px) {
+        body {
+            grid-template-areas:
+                "header"
+                "nav"
+                "aside"
+                "main"
+                "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: 100px 50px auto auto 100px;
+        }
+        nav {
+            justify-content: center;
+        }
+    }
+    @media only screen and (max-width: 350px){
+        body{
+            grid-template-rows: auto auto auto auto auto;
+        }
+        nav, header, footer {
+            flex-direction: column;
+        }
+        nav {
+            justify-content: center;
+        }
+    }
+    #logo__img {
+        max-width: 7%;
+        min-width: 45px;
+    }
+    nav a {
+        text-decoration: none;
+        color: inherit;
+    }
+    img {
+        max-width: 100%;
+    }
+    main {
+        flex-direction: column;
+    }
+    p {
+        text-align: justify;
+        width: 95%;
+    }
+    h1 {
+        font-size: 1.5em;
+        font-weight: bolder;
+    }
 
-#logo__img {
-    max-width: 7%;
-    min-width: 45px;
-}
+/* DEFINICIÓN CARRUSEL */
+    .carrusel{
+    overflow:hidden;
+    width: 95%;
+    margin: auto;
+    }
+    .carrusel ul {
+        padding: 0%;
+        display: flex;
+        width: 500%;
+        animation: cambio 30s infinite alternate
+    }
+    .carrusel li {
+    width: 100%;
+    list-style: none;
+    }
+    .carrusel img {
+        width: 100%;
+    }
+    @keyframes cambio{
+    0%{margin-left: 0%;}
+    15%{margin-left: 0%;}
 
-nav a {
-    text-decoration: none;
-    color: inherit;
-}
+    20%{margin-left: -100%;}
+    35%{margin-left: -100%;}
+
+    40%{margin-left: -200%;}
+    55%{margin-left: -200%;}
+
+    60%{margin-left: -300%;}
+    75%{margin-left: -300%;}
+
+    80%{margin-left: -400%;}
+    100%{margin-left: -400%;}
+    }
+
+/* DEFINICIONES DE DISEÑO */
+    /* Fondo web */
+    body {
+        background-color: tan;
+    }
+    /* Botones de navegación */
+    nav {
+        box-sizing: content-box;
+    }
+    .botonNav {
+        border-radius: 5%;
+        background-color: transparent;
+        padding: 0.5em 1em;
+        margin-left: 1em;
+    }
+    .botonNav:hover {
+        font-weight: bold;
+        color: tan;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    /* Aside */
+    aside, main{
+        background-color: rgba(0, 0, 0, 0.05);
+        /* border-radius: 2%; */
+    }
+
+    /* Footer */
+    footer {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
