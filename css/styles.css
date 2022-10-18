@@ -24,11 +24,14 @@
         justify-content: center;
         align-items: center;
     }
+    footer {
+        flex-direction: column;
+    }
 
     /* Definir distribución Grid (Desktop first)*/
     body {
         display: grid;
-        /* grid-gap: 1.2em; */
+        /* grid-gap: 1em; */
         grid-template-areas:
             "header nav nav nav footer"
             "aside aside main main footer";
@@ -49,6 +52,10 @@
         nav {
             justify-content: end;
         }
+        footer{
+            flex-direction: row;
+            justify-content: center;
+        }
     }
     @media only screen and (max-width: 800px) {
         body {
@@ -64,6 +71,10 @@
         nav {
             justify-content: center;
         }
+        footer{
+            flex-direction: row;
+            justify-content: center;
+        }
     }
     @media only screen and (max-width: 350px){
         body{
@@ -75,14 +86,21 @@
         nav {
             justify-content: center;
         }
+        footer{
+            flex-direction: row;
+            justify-content: center;
+        }
     }
     #logo__img {
-        max-width: 7%;
-        min-width: 45px;
+        width: 3.5em;
     }
-    nav a {
+    nav a , a {
         text-decoration: none;
         color: inherit;
+    }
+
+    footer a img {
+        width: 1.5em;
     }
     img {
         max-width: 100%;
@@ -95,9 +113,11 @@
         width: 95%;
     }
     h1 {
-        font-size: 1.5em;
+        font-size: 1.8em;
         font-weight: bolder;
+        text-align: left;
     }
+
 
 /* DEFINICIÓN CARRUSEL */
     .carrusel{
@@ -149,6 +169,7 @@
         background-color: transparent;
         padding: 0.5em 1em;
         margin-left: 1em;
+        margin-right: 1em;
     }
     .botonNav:hover {
         font-weight: bold;
@@ -159,10 +180,12 @@
     /* Aside */
     aside, main{
         background-color: rgba(0, 0, 0, 0.05);
-        /* border-radius: 2%; */
     }
 
     /* Footer */
     footer {
         background-color: rgba(0, 0, 0, 0.25);
+    }
+    footer a img {
+        margin:  0.5em;
     }
