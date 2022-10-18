@@ -12,6 +12,7 @@
     nav    { grid-area: nav}
     main   { grid-area: main}
     aside  { grid-area: aside}
+    section{ grid-area: section}
     footer { grid-area: footer}
 
     /* Definir todos los contenedortes del grid (Body) como Flex*/
@@ -19,6 +20,7 @@
     nav,
     main,
     aside,
+    section,
     footer {
         display: flex;
         justify-content: center;
@@ -36,11 +38,28 @@
             "header nav nav nav footer"
             "aside aside main main footer";
         grid-template-columns: repeat(4, 3fr) 100px;
+        grid-template-rows: 100px auto;
+    }
+    #index__body {
+        display: grid;
+        /* grid-gap: 1em; */
+        grid-template-areas:
+            "header nav nav nav footer"
+            "aside aside main main footer"
+            "section section section section footer";
+        grid-template-columns: repeat(4, 3fr) 100px;
         grid-template-rows: 100px auto auto;
     }
     nav {
         justify-content: end;
     }
+    .contenedor {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 1em;
+
+    }
+
     @media only screen and (max-width: 1024px) {
         body {
             grid-template-areas:
@@ -48,6 +67,14 @@
                 "aside aside aside main main"
                 "footer footer footer footer footer";
             grid-template-rows: 100px auto 100px;
+        }
+        #index__body {
+            grid-template-areas:
+            "header nav nav nav nav"
+            "aside aside aside main main"
+            "section section section section section"
+            "footer footer footer footer footer";
+            grid-template-rows: 100px auto auto 100px;
         }
         nav {
             justify-content: end;
@@ -66,7 +93,18 @@
                 "main"
                 "footer";
             grid-template-columns: 1fr;
-            grid-template-rows: 100px 50px auto auto 100px;
+            grid-template-rows: 100px 100px auto auto 100px;
+        }
+        #index__body {
+            grid-template-areas:
+            "header"
+            "nav"
+            "aside"
+            "main"
+            "section"
+            "footer";
+            grid-template-columns: 1fr;
+            grid-template-rows: 100px 100px auto auto auto 100px;
         }
         nav {
             justify-content: center;
@@ -80,6 +118,9 @@
         body{
             grid-template-rows: auto auto auto auto auto;
         }
+        #index__body {
+            grid-template-rows: auto auto auto auto auto auto;
+        }
         nav, header, footer {
             flex-direction: column;
         }
@@ -91,6 +132,7 @@
             justify-content: center;
         }
     }
+
     #logo__img {
         width: 3.5em;
     }
@@ -188,4 +230,16 @@
     }
     footer a img {
         margin:  0.5em;
+    }
+    /* Mapa de puntos verdes */
+    main iframe {
+        max-width: 80%;
+        max-height: 80%;
+    }
+    /* Formulario de contacto */
+    form {
+        width: 80%;
+    }
+    form div {
+
     }
