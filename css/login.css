@@ -55,7 +55,7 @@ section .color:nth-child(3){
 
 .box .square{
     position: absolute;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     box-shadow: 0 25px 45px rgba(0,0,0,0.1);
     border: 1px solid rgba(255,255,255,0.5 );
     border-right: 1px solid rgba(255,255,255,0.2);

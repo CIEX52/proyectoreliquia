@@ -80,6 +80,7 @@ header {
 }
 
 #menu {
+    background-color: blueviolet;
     color: white;
     align-self: center;
     justify-self: center;
