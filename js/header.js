@@ -1,6 +1,6 @@
 document.write(`
 <header>
-    <a href="index.html" id="logo"><img src="icons/leaf_icon.png" alt="logo">
+    <a href="index.html" id="logo"><img src="icons/leaf-icon.png" alt="logo">
     PROYECTO RELIQUIA
     </a>
 
