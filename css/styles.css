@@ -1,0 +1,318 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    font-size: 24px;
+    box-sizing: border-box;
+
+    /* border: .3px dotted red; */
+}
+
+/* DEFINICIÓN RESPONSIVE */
+/* Nombrar las áreas de Grid*/
+header {
+    grid-area: header
+}
+
+main {
+    grid-area: main
+}
+
+aside {
+    grid-area: aside
+}
+
+#mapa {
+    grid-area: mapa;
+}
+
+footer {
+    grid-area: footer
+}
+
+/* Definir todos los contenedores del grid (Body) como Flex*/
+header,
+#logo,
+nav,
+main,
+aside,
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Definir distribución Grid y (Desktop first)*/
+body {
+    display: grid;
+    grid-gap: .5em;
+    grid-template-areas:
+        "header header header header footer"
+        "aside aside main main footer";
+    grid-template-columns: repeat(4 auto) 100px;
+    grid-template-rows: auto auto auto;
+}
+
+header {
+    justify-content: space-around;
+}
+
+#logo {
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    
+}
+
+#logo img {
+    height: 80px;
+}
+
+.mapa {
+    width: 600px;
+    height: 600px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80px;
+    padding: 10px;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    body {
+        grid-template-areas:
+            "header header header header header"
+            "aside aside aside main main"
+            "footer footer footer footer footer";
+        grid-template-rows: auto auto auto auto auto;
+    }
+
+    #logo {
+        font-size: 1.5em;
+    }
+
+    nav {
+        font-size: 1em;
+    }
+
+    .mapa {
+        width: 500px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    body {
+        grid-template-areas:
+            "header"
+            "aside"
+            "aside"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto;
+    }
+
+    header {
+        height: auto;
+        flex-direction: column;
+    }
+
+    #logo img,
+    #logo h1 {
+        height: 50px;
+        font-size: large;
+    }
+
+    .mapa {
+        width: 95%;
+    }
+
+    aside p {
+        width: auto;
+        word-wrap: break-word;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        grid-template-rows: auto auto auto auto auto;
+    }
+
+    nav,
+    header {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #logo {
+        font-size: 1em;
+    }
+
+    #logo img {
+        align-items: center;
+        height: 60px;
+    }
+
+    aside {
+        max-width: 600px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+    }
+
+
+}
+
+/* DEFINICIÓN CARRUSEL */
+.carrusel {
+    overflow: hidden;
+    width: 95%;
+    margin: auto;
+}
+
+.carrusel ul {
+    padding: 0%;
+    display: flex;
+    width: 500%;
+    animation: cambio 30s infinite alternate
+}
+
+.carrusel li {
+    width: 100%;
+    list-style: none;
+}
+
+.carrusel img {
+    width: 100%;
+}
+
+@keyframes cambio {
+    0% {
+        margin-left: 0%;
+    }
+
+    15% {
+        margin-left: 0%;
+    }
+
+    20% {
+        margin-left: -100%;
+    }
+
+    35% {
+        margin-left: -100%;
+    }
+
+    40% {
+        margin-left: -200%;
+    }
+
+    55% {
+        margin-left: -200%;
+    }
+
+    60% {
+        margin-left: -300%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    80% {
+        margin-left: -400%;
+    }
+
+    100% {
+        margin-left: -400%;
+    }
+}
+
+/* DEFINICIONES DE DISEÑO */
+/* Fondo web */
+body {
+    background-color: tan;
+}
+
+#logo:hover {
+    font-weight: bold;
+    filter: invert(1) drop-shadow(0 0 0.3rem rgb(254, 144, 0));
+}
+
+/* Botones de navegación */
+
+.botonNav {
+    border-radius: 5%;
+    background-color: transparent;
+    margin: 1em;
+    padding: .5em;
+    width: 100%;
+}
+
+.botonNav:hover {
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #bebebe,
+        -1px -1px 10px #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    flex-direction: column;
+}
+
+aside {
+    font-size: 1.4em;
+}
+
+/* Aside */
+aside,
+main {
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: justify;
+}
+
+p {
+    text-align: justify;
+    padding: 0 5px 0 5px;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+form input,
+select {
+    background-color: rgb(230, 215, 195);
+}
