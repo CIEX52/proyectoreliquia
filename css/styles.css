@@ -330,3 +330,55 @@ form input,
 select {
     background-color: rgb(230, 215, 195);
 }
+
+/* SOCIAL MEDIA BUTTONS */
+
+footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fab {
+    width: 40px;
+    height: 40px;
+    transition: .3s;
+    padding: .5px;
+}
+
+.facebook,
+.telegram {
+    border-radius: 50%;
+}
+
+.facebook:hover {
+    background-color: white;
+    box-shadow: 0px 0px 15px white;
+    border-radius: 50%;
+}
+
+.instagram {
+    border-radius: 25%;
+}
+
+.instagram:hover {
+    background-color: white;
+    box-shadow: 0px 0px 15px white;
+    border-radius: 25%;
+}
+
+.whatsapp {
+    border-radius: 50% 50% 50% 0;
+}
+
+.whatsapp:hover {
+    background-color: white;
+    box-shadow: 0px 0px 15px white;
+    border-radius: 50% 50% 50% 0;
+}
+
+.telegram:hover {
+    background-color: white;
+    box-shadow: 0px 0px 15px white;
+    border-radius: 50%;
+}
