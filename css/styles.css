@@ -305,6 +305,11 @@ footer {
     background-color: rgba(0, 0, 0, 0.25);
 }
 
+footer a img {
+    width: 50px;
+    height: 50px;
+}
+
 .formulario * {
     padding: 5px;
     font-size: .7rem;
