@@ -21,10 +21,6 @@ aside {
     grid-area: aside
 }
 
-#mapa {
-    grid-area: mapa;
-}
-
 footer {
     grid-area: footer
 }
@@ -53,7 +49,9 @@ body {
 }
 
 header {
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 90vw;
+    height: 20vh;
 }
 
 #logo {
@@ -76,7 +74,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 80px;
+    width: 5vw;
     padding: 10px;
 }
 
@@ -90,6 +88,10 @@ footer {
         grid-template-rows: auto auto auto auto auto;
     }
 
+    header {
+        width: 95vw;
+    }
+
     #logo {
         font-size: 1.5em;
     }
@@ -98,15 +100,11 @@ footer {
         font-size: 1em;
     }
 
-    .mapa {
-        width: 500px;
-    }
-
     footer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width: auto;
+        width: 100%;
     }
 }
 
@@ -305,6 +303,17 @@ p {
 /* Footer */
 footer {
     background-color: rgba(0, 0, 0, 0.25);
+}
+
+.formulario * {
+    padding: 5px;
+    font-size: .7rem;
+}
+
+#inquietud li {
+    padding: 5px;
+    text-align: justify;
+    font-size: .9em;
 }
 
 form div {
