@@ -1,8 +1,8 @@
 document.write(`
 <footer>
-    <a href="https://www.facebook.com/" target="_blank"><img src="icons/facebook.png" alt="facebook"></a>
-    <a href="https://www.instagram.com/" target="_blank"><img src="icons/instagram.png" alt="instagram"></a>
-    <a href="https://telegram.org/" target="_blank"><img src="icons/telegrama.png" alt="telegram"></a>
-    <a href="https://www.whatsapp.com/" target="_blank"><img src="icons/whatsapp.png" alt="whatsapp"></a>
+    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+    <a href="https://chat.whatsapp.com/BiaPEpimmAbAiAVhz3EZm9" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i></a>
 </footer>
 `)
