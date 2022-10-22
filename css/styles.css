@@ -25,13 +25,15 @@ footer {
     grid-area: footer
 }
 
-/* Definir todos los contenedores del grid (Body) como Flex*/
+/* Definir todos los contenedores del grid (Body) como Flex y otros elementos*/
 header,
 #logo,
 nav,
 main,
 aside,
-footer {
+footer,
+#contacto,
+#contacto-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +51,7 @@ body {
 }
 
 header {
+    background-color: rgb(200, 170, 130);
     justify-content: space-between;
     width: 90vw;
     height: 20vh;
@@ -58,7 +61,7 @@ header {
     align-items: center;
     font-weight: bold;
     font-size: 1.5em;
-    
+
 }
 
 #logo img {
@@ -70,6 +73,11 @@ header {
     height: 600px;
 }
 
+aside iframe {
+    width: 600px;
+    height: 400px;
+}
+
 footer {
     display: flex;
     flex-direction: column;
@@ -77,7 +85,6 @@ footer {
     width: 5vw;
     padding: 10px;
 }
-
 
 @media only screen and (max-width: 1024px) {
     body {
@@ -98,6 +105,10 @@ footer {
 
     nav {
         font-size: 1em;
+    }
+
+    aside iframe {
+        min-width: 400px;
     }
 
     footer {
@@ -133,6 +144,10 @@ footer {
 
     .mapa {
         width: 95%;
+    }
+
+    aside iframe {
+        width: 95vw;
     }
 
     aside p {
@@ -259,7 +274,6 @@ body {
 /* Botones de navegación */
 
 .botonNav {
-    border-radius: 5%;
     background-color: transparent;
     margin: 1em;
     padding: .5em;
@@ -326,10 +340,72 @@ form div {
     justify-content: space-between;
 }
 
-form input,
-select {
-    background-color: rgb(230, 215, 195);
+/* FORMULARIO DE CONTACTO */
+#contacto {
+    background-color: rgb(200, 170, 130);
+    box-sizing: content-box;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px;
+    height: 70vh;
 }
+
+#contacto * {
+    text-align: start;
+}
+
+#contacto-btn {
+    align-self: center;
+    justify-content: space-between;
+    width: 300px;
+}
+
+#Fullname,
+#Email,
+#Msg:required:invalid {
+    background-color: rgb(250, 190, 190);
+}
+
+#contacto:valid {
+    box-sizing: border-box;
+    filter: drop-shadow(0 0 0.5rem green);
+}
+
+#msg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+#msg span {
+    align-self: flex-end;
+    font-size: .6em;
+}
+
+#send {
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+#send:hover,
+#reset:hover {
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #bebebe,
+        -1px -1px 10px #ffffff;
+}
+
+#reset {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+}
+
 
 /* SOCIAL MEDIA BUTTONS */
 
@@ -364,7 +440,7 @@ footer a {
 .instagram:hover {
     background-color: white;
     box-shadow: 0px 0px 15px white;
-    border-radius: 25%;
+    border-radius: 50%;
 }
 
 .whatsapp {
