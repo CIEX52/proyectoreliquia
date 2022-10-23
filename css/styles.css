@@ -368,9 +368,22 @@ form div {
     background-color: rgb(250, 190, 190);
 }
 
+#Fullname:valid {
+    background-color: rgb(198, 250, 190);
+}
+
+#Email:valid {
+    background-color: rgb(198, 250, 190);
+}
+
+#Msg:required:valid {
+    background-color: rgb(198, 250, 190);
+}
+
 #contacto:valid {
-    box-sizing: border-box;
-    filter: drop-shadow(0 0 0.5rem green);
+    box-sizing: content-box;
+    /* filter: drop-shadow(0 0 0.5rem green); */
+    box-shadow: 0 0 10px green;
 }
 
 #msg {
