@@ -23,10 +23,11 @@ document.getElementById('Email').addEventListener('input', function () {
 
     if (emailRegex.test(campo.value)) {
         valido.innerText = " correcto";
+        document.getElementById('Email').style.backgroundColor="#c6fabe";
     }
     else {
         valido.innerText = " incorrecto";
-
+        document.getElementById('Email').style.backgroundColor="#fabebe";
     }
 });
 
