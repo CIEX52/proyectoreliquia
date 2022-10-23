@@ -398,13 +398,15 @@ form div {
     font-size: .6em;
 }
 
-#send {
-    border-radius: 5px;
+#send, #reset {
     background-color: transparent;
+    border: none;
+    text-decoration: underline;
 }
 
 #send:hover,
 #reset:hover {
+    box-sizing: border-box;
     font-weight: bold;
     color: white;
     background-color: rgba(0, 0, 0, 0.1);
@@ -412,13 +414,6 @@ form div {
     box-shadow: 1px 1px 10px #bebebe,
         -1px -1px 10px #ffffff;
 }
-
-#reset {
-    background-color: transparent;
-    border: none;
-    text-decoration: underline;
-}
-
 
 /* SOCIAL MEDIA BUTTONS */
 
