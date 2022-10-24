@@ -3,6 +3,10 @@
     text-align: center;
     font-size: 1.05em;
 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
     /* border: 1px solid black; */
 }
 
@@ -15,7 +19,7 @@
     section{ grid-area: section}
     footer { grid-area: footer}
 
-    /* Definir todos los contenedortes del grid (Body) como Flex*/
+    /* Definir todos los contenedores del grid (Body) como Flex*/
     header,
     nav,
     main,
@@ -57,7 +61,12 @@
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-gap: 1em;
-
+        /* justify-content: center; */
+        /* align-content: center; */
+        /* align-content: center; */
+    }
+    .contenedor div {
+        margin: 1.5em;
     }
 
     @media only screen and (max-width: 1024px) {
@@ -78,6 +87,9 @@
         }
         nav {
             justify-content: end;
+        }
+        .contenedor {
+            grid-template-columns: repeat(3, 1fr);
         }
         footer{
             flex-direction: row;
@@ -109,6 +121,9 @@
         nav {
             justify-content: center;
         }
+        .contenedor {
+            grid-template-columns: repeat(2, 1fr);
+        }
         footer{
             flex-direction: row;
             justify-content: center;
@@ -126,6 +141,9 @@
         }
         nav {
             justify-content: center;
+        }
+        .contenedor {
+            grid-template-columns: 1fr;
         }
         footer{
             flex-direction: row;
@@ -220,8 +238,15 @@
     }
 
     /* Aside */
-    aside, main{
+    aside, main {
         background-color: rgba(0, 0, 0, 0.05);
+    }
+    #contact__aside ul li{
+        padding: 10px;
+    }
+    #contact__aside ul{
+        width: 90%;
+        list-style: none;
     }
 
     /* Footer */
@@ -236,10 +261,115 @@
         max-width: 80%;
         max-height: 80%;
     }
-    /* Formulario de contacto */
-    form {
-        width: 80%;
-    }
-    form div {
 
+    /* Tarjetas del index */
+    .tarjeta {
+        font-size: 0.7em;
+        overflow: hidden;
+        cursor: default;
+        transition: all 400ms ease;
+    }
+    .tarjeta:hover {
+        transform: translateY(-2%);
+    }
+
+    /* Formulario de contacto */
+    .formulario {
+        width: 80%;
+        font-size: smaller;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .formulario__grupo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+    .formulario__label {
+        display: block;
+        font-weight: bolder;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .formulario__input {
+        width: 100%;
+        background-color: rgb(214, 203, 193);
+        border: 3px solid transparent;
+        border-radius: 3px;
+        height: 30px;
+        line-height: 30px;
+        /* padding: 0 40px 0 10px; */
+        transition: .3s ease all;
+    }
+    .formulario__input:focus {
+        border: 3px solid rgba(0, 0, 0, 0.2);
+        outline: none;
+        box-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
+    }
+    .formulario__input-error {
+        font-size: .8em;
+        display: none;
+    }
+    .formulario__input-error-activo {
+        display: block;
+    }
+    .formulario__mensaje {
+        height: 45px;
+        line-height: 45px;
+        background: rgba(246, 96, 96, 0.5);
+        border-radius: 3px;
+        padding: 0 15px;
+        display: none;
+    }
+    .formulario__mensaje-activo {
+        display: block;
+    }
+    .formulario__grupo-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .formulario__btn {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: 40px;
+        line-height: 40px;
+        width: 40%;
+        border: none;
+        border-radius: 3px;
+        background: rgba(0, 0, 0, 0.3);
+        color: black;
+        font-weight: bolder;
+        cursor: pointer;
+        transition: .1s ease all;
+    }
+    .formulario__btn:hover {
+        box-shadow: 3px 0px 30px rgba(0, 0, 0, 0.2);
+    }
+    .formulario__mensaje-exito {
+        color: #124d0a;
+        height: 40px;
+        line-height: 35px;
+        font-weight: bolder;
+        border: 3px solid #124d0a;
+        border-radius: 3px;
+        padding: 0 15px;
+        display: none;
+    }
+    .formulario__mensaje-exito i {
+        margin-right: 10px;
+    }
+
+    .formulario__mensaje-exito-activo {
+        display: block;
+    }
+
+    /* Estilos para validación de formulario */
+    .formulario__grupo-correcto .formulario__input{
+        border: 3px solid #124d0a;
+    }
+    .formulario__grupo-incorrecto .formulario__input{
+        border: 3px solid rgb(116, 23, 23);
     }

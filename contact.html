@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon" />
+    <script src="https://kit.fontawesome.com/d14378a8cb.js" crossorigin="anonymous"></script>
     <title>Proyecto Reliquia</title>
 </head>
 
@@ -19,59 +20,94 @@
     <script src="js/header.js"></script>
 
     <main>
-        <form action="link" method="post" target="_blank">
-            <div>
-                <label for="firstname">Nombre:</label>
-                <input type="text" name="firstname">
+        <br>
+        <form class="formulario" id="formulario" action="https://formspree.io/f/mdojdqdp" method="post" target="_blank">
+            <!-- FORMSPREE ==>> ariel.palazzesi@bue.edu.ar -->
+
+            <!-- Grupo nombre -->
+            <div class="formulario__grupo" id="grupo__firstname">
+                <label class="formulario__label"  for="firstname">Nombre:</label>
+                <input class="formulario__input" id="firstname" name="firstname" type="text" placeholder="Su nombre">
+                <p class="formulario__input-error">El nombre solo puede contener letras y espacios.</p>
             </div>
-            <div>
-                <label for="lastname">Apellido:</label>
-                <input type="text" name="lastname">
+            <!-- Grupo apellido -->
+            <div class="formulario__grupo" id="grupo__lastname">
+                <label class="formulario__label"  for="lastname">Apellido:</label>
+                <input class="formulario__input" id="lastname" name="lastname" type="text" placeholder="Su apellido">
+                <p class="formulario__input-error">El apellido solo puede contener letras y espacios.</p>
             </div>
-            <div>
-                <label for="tel">Telefono:</label>
-                <input type="tel" name="tel" placeholder="+54 11 440258">
+            <!-- Grupo teléfono -->
+            <div class="formulario__grupo" id="grupo__tel">
+                <label class="formulario__label"  for="tel">Teléfono:</label>
+                <input class="formulario__input" id="tel" name="tel" type="tel" placeholder="2664559900">
+                <p class="formulario__input-error">El teléfono debe contener al menos 7 números sin espacios.</p>
             </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" name="email" placeholder="correo@mail.com">
-            </div>
-            <div>
-                <label for="motivo">Motivo</label>
-                <select name="motivo" id="motivo">
+            <!-- Grupo email -->
+            <div class="formulario__grupo" id="grupo__email">
+                <label class="formulario__label"  for="email">Email:</label>
+                <input class="formulario__input" id="email" name="email" type="email" placeholder="mail@dominio.com">
+                <p class="formulario__input-error">El mail ingresado no es una dirección válida de correo.</p>
+            </div>            
+            <!-- Grupo motivo -->
+            <div class="formulario__grupo" id="grupo__motivo">
+                <label class="formulario__label" for="motivo">Motivo</label>
+                <select class="formulario__input" id="motivo" name="motivo">
                     <option value="0">Solicitar recuperador</option>
                     <option value="1">Conocer beneficios</option>
                     <option value="2">Gestionar capacitación</option>
                     <option value="3">Otra</option>
                 </select>
             </div>
-            <div>
-                <label for="mensaje">Mensaje:</label>
-                <input type="text" name="mensaje" placeholder="Escriba su mensaje aquí.">
+            <!-- Grupo mensaje -->
+            <div class="formulario__grupo" id="grupo__mensaje">
+                <label class="formulario__label" for="mensaje">Observaciones:</label>
+                <input class="formulario__input" id="mensaje" name="mensaje" type="text" placeholder="Escriba su mensaje aquí.">
             </div>
-            <div>
-                <input type="submit" value="Enviar" class="boton">
-                <input type="reset" value="Borrar" class="boton">
+            <!-- Mensaje de error -->
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> <b>Error:</b> Por favor rellena el formulario correctamente.</p>
+            </div>
+            <!-- Grupo botones -->
+            <div class="formulario__grupo formulario__grupo-btn" >
+                <button type="submit" class="formulario__btn">Enviar</button>
+                <button type="reset" class="formulario__btn">Borrar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito"><i class="fa-solid fa-envelopes-bulk"></i>Formulario enviado exitosamente!</p>
+                <br>
             </div>
         </form>
     </main>
 
-    <aside>
-        <h2>Acercanos tu inquietud</h2>
+    <aside id="contact__aside">
         <ul>
-            <li>Si vivís en departamento con encargado o sos una empresa, oficina o comercio con una gran generación de
+            <li>
+                <h2>Acercanos tu inquietud!</h2>
+                <br>
+            </li>
+            <li>
+                <i class="fa-regular fa-circle-check"></i>
+                Si vivís en departamento con encargado o sos una empresa, oficina o comercio con una gran generación de
                 residuos reciclables, podés entregárselos a los recuperadores urbanos que pasan por tu cuadra.
             </li>
-            <li>Si necesitás más información sobre nuestro programa de incentivos.
+            <li>
+                <i class="fa-regular fa-circle-check"></i>
+                Si necesitás más información sobre nuestro programa de incentivos.
             </li>
-            <li>Para aportar tus ideas o inquietudes.
+            <li>
+                <i class="fa-regular fa-circle-check"></i>
+                Para aportar tus ideas o inquietudes.
             </li>
-            <li>Para solicitar capacitaciones en tu escuela o barrio.
+            <li>
+                <i class="fa-regular fa-circle-check"></i>
+                Para solicitar capacitaciones en tu escuela o barrio.
             </li>
         </ul>
     </aside>
 
+
     <script src="js/footer.js"></script>
+
+    <script src="js/formulario.js"></script>
+    
 
 </body>
 
