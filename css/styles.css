@@ -53,7 +53,7 @@ body {
 header {
     background-color: rgb(200, 170, 130);
     justify-content: space-between;
-    width: 90vw;
+    width: auto;
     height: 20vh;
 }
 
@@ -61,11 +61,23 @@ header {
     align-items: center;
     font-weight: bold;
     font-size: 1.5em;
-
 }
 
 #logo img {
     height: 80px;
+    animation: rotate-animation 5s infinite linear;
+}
+
+@keyframes rotate-animation {
+	0% {
+		transform: rotateY(0deg);
+  }
+  50% {
+		transform: rotateY(180deg);
+	}
+	100% {
+		transform: rotateY(360deg);
+	}
 }
 
 .mapa {
@@ -96,7 +108,7 @@ footer {
     }
 
     header {
-        width: 95vw;
+        width: auto;
     }
 
     #logo {
