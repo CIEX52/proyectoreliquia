@@ -36,6 +36,7 @@ function validacion() {
     if (Fullname && !Email && Msg) {
         alert("Formulario enviado!!!");
         formulario.submit();
+        location.reload();
         return true;
     }
     else {
