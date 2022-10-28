@@ -393,9 +393,9 @@ form div {
     line-height: 1;
 }
 
-#msg span {
+#contador {
     align-self: flex-end;
-    font-size: .6em;
+    font-size: .7em;
 }
 
 #send, #reset {

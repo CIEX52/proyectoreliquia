@@ -1,18 +1,14 @@
-
-
 // CONTADOR DE CARACTERES
-function countChars(obj) {
-    var maxLength = 200;
-    var strLength = obj.value.length;
-    var charRemain = (maxLength - strLength);
+const mensaje = document.querySelector('#Msg');
+const contador = document.querySelector('#contador');
+$("#contador").html(`caracteres ${mensaje.value.length}/${mensaje.maxLength}`)
 
-    if (charRemain < 0) {
-        document.getElementById("charNum").innerHTML = '<span style="color: red;">Exediste el límite de ' + maxLength + ' caracteres</span>';
-    }
-    else {
-        document.getElementById("charNum").innerHTML = charRemain + ' caracteres restantes';
-    }
-};
+mensaje.addEventListener('input', function(e) {
+    const target = e.target;
+    const lenMax = target.getAttribute('maxlength');
+    const lenAct = target.value.length;
+    $("#contador").html(`caracteres ${lenAct}/${lenMax}`);
+});
 
 // VALIDAR EMAIL SOBRE LA MARCHA
 document.getElementById('Email').addEventListener('input', function () {
@@ -33,13 +29,12 @@ document.getElementById('Email').addEventListener('input', function () {
 
 // VALIDAR INPUTS DE CONTACTO
 function validacion() {
-    var formulario = document.getElementById("contacto");
-    var Fullname = document.getElementById('Fullname').validity.valid;
-    var Email = document.getElementById('Email').validity.patternMismatch;
-    var Msg = document.getElementById('Msg').validity.valid
+    const Fullname = document.getElementById('Fullname').validity.valid;
+    const Email = document.getElementById('Email').validity.patternMismatch;
+    const Msg = document.getElementById('Msg').validity.valid
 
-    if (Fullname && Email && Msg) {
-        alert("Enviando el formulario");
+    if (Fullname && !Email && Msg) {
+        alert("Formulario enviado!!!");
         formulario.submit();
         return true;
     }
@@ -48,10 +43,9 @@ function validacion() {
             alert('Valor "Nombre" incorrecto, debe cumplir las condiciones (Nombre Apellido)');
             return false;
         }
-        else if (!Email) {
+        else if (Email) {
             alert('Valor "Email" incorrecto, debe ser un email de formato válido!');
             return false;
         }
-
     }
 }
