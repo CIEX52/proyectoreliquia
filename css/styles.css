@@ -17,6 +17,10 @@ main {
     grid-area: main
 }
 
+#contacto {
+    grid-area: main;
+}
+
 aside {
     grid-area: aside
 }
@@ -45,7 +49,7 @@ body {
     grid-gap: .5em;
     grid-template-areas:
         "header header header header footer"
-        "aside aside main main footer";
+        "aside aside aside main footer";
     grid-template-columns: repeat(4 auto) 100px;
     grid-template-rows: auto auto auto;
 }
@@ -54,13 +58,17 @@ header {
     background-color: rgb(200, 170, 130);
     justify-content: space-between;
     width: auto;
-    height: 20vh;
+    height: 15vh;
 }
 
 #logo {
     align-items: center;
     font-weight: bold;
     font-size: 1.5em;
+}
+
+main, aside {
+    height: 80vh;
 }
 
 #logo img {
@@ -350,9 +358,8 @@ footer a img {
     align-items: flex-start;
     justify-content: space-between;
     padding: 10px;
-    margin: 5px;
     height: 70vh;
-    width: 95vw;
+    width: 40vw;
 }
 
 #contacto * {
@@ -394,6 +401,11 @@ footer a img {
     flex-direction: column;
     align-items: flex-start;
     line-height: 1;
+    box-sizing: border-box;
+}
+
+#msg textarea {
+    width: 40vw;
 }
 
 #contador {

@@ -48,6 +48,7 @@
   </aside>
 
 
+<main>
   <form id="contacto" action="https://formspree.io/f/mwkznydy" method="POST" onsubmit="return validacion();">
     <!-- https://formspree.io/f/mwkznydy -->
     <!-- ariel.palazzesi@bue.edu.ar -->
@@ -66,7 +67,7 @@
 
     <label id="msg" for="Msg">
       <span id="contador"></span>
-      <textarea name="textarea" id="Msg" form="contacto" rows="5" cols="40" spellcheck="ture" required="true"
+      <textarea name="textarea" id="Msg" form="contacto" spellcheck="ture" required="true"
         minlength="10" maxlength="200" autocomplete="off""
         placeholder="Escriba su consulta aquí..."></textarea>
     </label>
@@ -75,8 +76,8 @@
       <button id="send" type="submit">Enviar</button>
       <button id="reset" type="reset">Borrar</button>
     </div>
-
   </form>
+</main>
 
   <footer>
     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"><img class="fab facebook"
