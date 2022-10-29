@@ -1,10 +1,8 @@
 * {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
-    font-size: 24px;
+    font-size: 1.2rem;
     box-sizing: border-box;
-
-    /* border: .3px dotted red; */
 }
 
 /* DEFINICIÓN RESPONSIVE */
@@ -89,8 +87,9 @@ main, aside {
 }
 
 .mapa {
+    margin: 5px;
     width: 600px;
-    height: 600px;
+    height: 500px;
 }
 
 aside iframe {
@@ -113,6 +112,7 @@ footer {
             "aside aside aside main main"
             "footer footer footer footer footer";
         grid-template-rows: auto auto auto auto auto;
+        font-size: .001vw .001vh;
     }
 
     header {
